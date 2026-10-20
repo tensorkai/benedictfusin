@@ -1,0 +1,137 @@
+{
+  "fetchedAt": "2026-10-19T12:03:23.063Z",
+  "repositories": [
+    {
+      "name": "benedictfusin",
+      "description": null,
+      "language": null,
+      "url": "https://github.com/tensorkai/benedictfusin",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-10-19T10:50:23Z",
+      "archived": false
+    },
+    {
+      "name": "leetkai",
+      "description": null,
+      "language": "TypeScript",
+      "url": "https://github.com/tensorkai/leetkai",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-10-18T09:41:52Z",
+      "archived": false
+    },
+    {
+      "name": "Internet-of-Things-Roadmap",
+      "description": null,
+      "language": null,
+      "url": "https://github.com/tensorkai/Internet-of-Things-Roadmap",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-10-16T14:51:31Z",
+      "archived": false
+    },
+    {
+      "name": "chipr",
+      "description": null,
+      "language": "TypeScript",
+      "url": "https://github.com/tensorkai/chipr",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-10-11T13:21:01Z",
+      "archived": false
+    },
+    {
+      "name": "gokada",
+      "description": null,
+      "language": "JavaScript",
+      "url": "https://github.com/tensorkai/gokada",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-10-04T01:57:07Z",
+      "archived": false
+    },
+    {
+      "name": "mock-lilim-go",
+      "description": null,
+      "language": "JavaScript",
+      "url": "https://github.com/tensorkai/mock-lilim-go",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-10-01T14:39:58Z",
+      "archived": false
+    },
+    {
+      "name": "secuwearhouse",
+      "description": null,
+      "language": null,
+      "url": "https://github.com/tensorkai/secuwearhouse",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-09-25T12:57:48Z",
+      "archived": false
+    },
+    {
+      "name": "ml-4-everyone",
+      "description": null,
+      "language": null,
+      "url": "https://github.com/tensorkai/ml-4-everyone",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-09-22T10:42:51Z",
+      "archived": false
+    },
+    {
+      "name": "sentinel",
+      "description": null,
+      "language": "TypeScript",
+      "url": "https://github.com/tensorkai/sentinel",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-09-19T14:09:37Z",
+      "archived": false
+    },
+    {
+      "name": "proctorly",
+      "description": null,
+      "language": "TypeScript",
+      "url": "https://github.com/tensorkai/proctorly",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-09-13T23:23:57Z",
+      "archived": false
+    },
+    {
+      "name": "All-About-Python",
+      "description": "All of my python practices will be compiled here",
+      "language": "Python",
+      "url": "https://github.com/tensorkai/All-About-Python",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-07-04T12:54:36Z",
+      "archived": false
+    },
+    {
+      "name": "python-data-dence",
+      "description": "python data manipulation (e.g. plotting, mapping, graph, etc.) refreshers",
+      "language": "Python",
+      "url": "https://github.com/tensorkai/python-data-dence",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-24T15:52:06Z",
+      "archived": false
+    }
+  ]
+}

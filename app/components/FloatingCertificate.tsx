@@ -44,6 +44,14 @@ export default function FloatingCertificate({ placement }: { placement: Certific
     </button>
     <dialog ref={dialog} className="certificate-dialog" aria-labelledby={titleId}
       onCancel={() => setOpen(false)} onClose={() => setOpen(false)}
+      onKeyDown={(event) => {
+        if (event.key !== "Tab") return;
+        const controls = Array.from(event.currentTarget.querySelectorAll<HTMLElement>("button, a[href]"));
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+      }}
       onClick={(event) => { if (event.target === event.currentTarget) setOpen(false); }}>
       <div className="certificate-dialog__content">
         <div className="certificate-dialog__heading"><h2 id={titleId}>{item.title}</h2><button autoFocus onClick={() => setOpen(false)} aria-label="Close certificate preview">Close ×</button></div>
