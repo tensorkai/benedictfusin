@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+<defs><radialGradient id="glow"><stop stop-color="#ff7a24" stop-opacity=".16"/><stop offset="1" stop-color="#ff7a24" stop-opacity="0"/></radialGradient></defs>
+<rect width="800" height="500" fill="#0b0b0b"/><circle cx="590" cy="210" r="280" fill="url(#glow)"/>
+<path d="M40 40h30M40 40v30m720-30h-30m30 0v30M40 460h30m-30 0v-30m720 30h-30m30 0v-30" stroke="#ffffff38" fill="none"/>
+<g fill="none" stroke="#ff7a24" stroke-width="2.5"><circle cx="595" cy="190" r="118"/><circle cx="595" cy="190" r="85"/><circle cx="595" cy="190" r="51"/><path d="M555 242V147l40-26 40 26v95Z" fill="#ff7a24"/><path d="M580 242v-42h30v42" stroke="#111"/></g>
+<text x="65" y="360" font-family="Arial,sans-serif" font-size="68" letter-spacing="-3" font-weight="700" fill="#fff">Beacon</text>
+<text x="69" y="403" font-family="Arial,sans-serif" font-size="21" fill="#aaa">Prepared, together.</text>
+</svg>
