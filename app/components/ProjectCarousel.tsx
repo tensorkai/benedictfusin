@@ -61,7 +61,7 @@ export default function ProjectCarousel({ projects }: { projects: ProjectSlot[] 
         return content ? content.offsetHeight + 2 : 0;
       }));
       cards.current.forEach((card) => { if (card) card.style.height = `${height}px`; });
-      element!.style.height = `${Math.max(440, height + 90)}px`;
+      element!.style.height = `${Math.max(360, height + 70)}px`;
       paint();
     }
     const observer = new ResizeObserver(resize);
