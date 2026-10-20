@@ -35,6 +35,7 @@ export interface ProjectSlot {
 
 export interface BackgroundEntry {
   id: string;
+  logo?: string;
   title: string;
   organization: string;
   category: string;
@@ -211,6 +212,7 @@ export const education: BackgroundEntry[] = [
 export const experience: BackgroundEntry[] = [
   {
     id: "gdg-pup",
+    logo: "/organizations/gdg.webp",
     title: "IoT Co-Lead",
     organization: "Google Developer Groups on Campus PUP",
     category: "Leadership",
@@ -219,6 +221,7 @@ export const experience: BackgroundEntry[] = [
   },
   {
     id: "cisco-netconnect",
+    logo: "/organizations/cisco.svg",
     title: "Developer Network Cadet",
     organization: "Cisco NetConnect PUP, Manila",
     category: "Training",
@@ -227,6 +230,7 @@ export const experience: BackgroundEntry[] = [
   },
   {
     id: "iecep",
+    logo: "/organizations/iecep.png",
     title: "Manila Student Chapter Associate",
     organization: "IECEP",
     category: "Community involvement",
@@ -235,6 +239,7 @@ export const experience: BackgroundEntry[] = [
   },
   {
     id: "datacamp",
+    logo: "/organizations/datacamp.svg",
     title: "AI Engineering for Data Science and Developer Scholar",
     organization: "DataCamp",
     category: "Scholarship",
