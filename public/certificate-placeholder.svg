@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480">
+  <rect width="720" height="480" fill="#f6f6f6"/>
+  <path d="M0 0h210L0 210ZM720 480H510l210-210Z" fill="#ff7a24"/>
+  <path d="M36 36h648v408H36Z" fill="none" stroke="#171717" stroke-width="2"/>
+  <g fill="none" stroke="#ff7a24"><ellipse cx="360" cy="145" rx="73" ry="24" transform="rotate(-25 360 145)"/><ellipse cx="360" cy="145" rx="73" ry="24" transform="rotate(25 360 145)"/><circle cx="360" cy="145" r="9" fill="#171717"/></g>
+  <text x="360" y="252" text-anchor="middle" fill="#171717" font-family="Arial,sans-serif" font-size="32">Certificate placeholder</text>
+  <text x="360" y="294" text-anchor="middle" fill="#555" font-family="Arial,sans-serif" font-size="19">Original document coming soon.</text>
+  <path d="M285 350h150" stroke="#ff7a24" stroke-width="3"/>
+</svg>
