@@ -1,0 +1,11 @@
+2026-10-19 13:50:55.576: [INFO] CurrentProfilePath: C:\Users\kai\Desktop\benedictfusin\.aider-desk\edge-preview\Default
+2026-10-19 13:50:55.576: [INFO] Profiles total count: 1
+2026-10-19 13:50:55.576: [INFO] Profile: name=Profile 1 path=C:\Users\kai\Desktop\benedictfusin\.aider-desk\edge-preview\Default lastActive=2026-10-19T13:50:55.549Z
+2026-10-19 13:50:55.576: [INFO] LastUsedProfileDir: C:\Users\kai\Desktop\benedictfusin\.aider-desk\edge-preview\Default
+2026-10-19 13:50:55.576: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=C:\Users\kai\Desktop\benedictfusin\.aider-desk\edge-preview\Default lastActive=2026-10-19T13:50:55.549Z
+2026-10-19 13:50:55.576: [INFO] OnDoneLoading sync enabled: 0
+2026-10-19 13:50:55.576: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-19 13:50:55.576: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-19 13:50:55.576: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-19 13:50:59.936: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-19 13:51:00.231: [INFO] VisibilityChanged: 0
