@@ -32,3 +32,19 @@ test("fractional rotation stays continuous across the last-to-first boundary", (
   assert.ok(Math.abs(before.scale - after.scale) < .001);
   assert.equal(projectRingPose(0, 25, 1, 300).x, 0);
 });
+
+
+test("five live projects wrap smoothly and each card reaches the front", () => {
+  assert.equal(wrapProject(5, 5), 0);
+  assert.equal(wrapProject(-1, 5), 4);
+  for (let index = 0; index < 5; index++) {
+    const pose = projectRingPose(index, index, 5, 340);
+    assert.equal(pose.x, 0);
+    assert.equal(pose.depth, 1);
+    assert.equal(pose.scale, 1);
+  }
+  const before = projectRingPose(0, 4.99, 5, 340);
+  const after = projectRingPose(0, 5.01, 5, 340);
+  assert.ok(Math.abs(before.x - after.x) < 10);
+  assert.ok(Math.abs(before.scale - after.scale) < .001);
+});
