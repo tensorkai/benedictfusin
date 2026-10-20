@@ -30,6 +30,7 @@ export interface ProjectSlot {
   tags: string[];
   status: string;
   href?: string;
+  preview?: { src: string; alt: string };
 }
 
 export interface AccomplishmentSlot {
@@ -154,40 +155,39 @@ export const stack: StackCategory[] = [
 
 export const projectSlots: ProjectSlot[] = [
   {
-    code: "PRJ-01",
-    title: "SecuWear — Wearable Safety & IoT Telemetry",
-    domain: "Circuits · Embedded IoT",
-    summary:
-      "Wearable hardware and sensor telemetry system designed to bridge real-world physical signals with responsive alerts.",
-    tags: ["IoT", "Wearable Hardware", "Sensors"],
-    status: "Write-up Incoming",
+    code: "beacon", title: "Beacon", domain: "Preparedness",
+    summary: "A household preparedness workspace for emergency plans, go-bag checklists, and evacuation information.",
+    tags: ["Household plans", "Go-bag", "Evacuation"], status: "Web app",
+    href: "https://beacon-mu-drab.vercel.app",
+    preview: { src: "/projects/beacon.svg", alt: "Beacon project graphic with radiating safety signals" },
   },
   {
-    code: "PRJ-02",
-    title: "NodeMCU Robotics & Sensor Control",
-    domain: "Circuits · Robotics",
-    summary:
-      "Microcontroller-driven robotics experiments combining wireless NodeMCU control, sensor fusion, and real-time actuation.",
-    tags: ["NodeMCU", "Robotics", "Embedded"],
-    status: "Write-up Incoming",
+    code: "pylon", title: "Pylon", domain: "Academic AI",
+    summary: "An academic companion for PUP Manila, bringing research, writing, and campus guidance into one workspace.",
+    tags: ["Research", "Writing", "Campus guidance"], status: "Web app",
+    href: "https://pylon-llm.vercel.app",
+    preview: { src: "/projects/pylon.svg", alt: "Pylon project graphic with an ascending architectural structure" },
   },
   {
-    code: "PRJ-03",
-    title: "Applied AI & Local Inference Pipelines",
-    domain: "Code · AI & Full-Stack",
-    summary:
-      "Full-stack web and edge applications bringing PyTorch, Hugging Face, LangChain, and Ollama models into practical interfaces.",
-    tags: ["PyTorch", "LangChain", "Ollama", "Next.js"],
-    status: "Write-up Incoming",
+    code: "istud", title: "iStud", domain: "Education",
+    summary: "A dedicated study workspace that brings learning and focus together.",
+    tags: ["Learning", "Focus"], status: "Web app",
+    href: "https://i-stud.vercel.app",
+    preview: { src: "/projects/istud.svg", alt: "iStud project graphic with an open book and a focus orbit" },
   },
   {
-    code: "PRJ-04",
-    title: "MATLAB Virtual Laboratories",
-    domain: "Canvas · Simulation",
-    summary:
-      "Interactive virtual lab environments built in MATLAB to visualize engineering systems, signals, and circuit behavior.",
-    tags: ["MATLAB", "Simulation", "Electronics"],
-    status: "Write-up Incoming",
+    code: "chipr", title: "Chipr", domain: "Finance",
+    summary: "A workspace for tracking personal and business finances.",
+    tags: ["Personal finance", "Business finance"], status: "Web app",
+    href: "https://chipr-smoky.vercel.app",
+    preview: { src: "/projects/chipr.svg", alt: "Chipr project graphic with abstract stacked coins" },
+  },
+  {
+    code: "loompoint", title: "Loompoint", domain: "AI workspace",
+    summary: "An AI chat workspace for connecting local models and cloud endpoints, with tools for coding and writing.",
+    tags: ["AI chat", "Local models", "Cloud endpoints"], status: "Web app",
+    href: "https://fusin-barangay-ai.vercel.app",
+    preview: { src: "/projects/loompoint.svg", alt: "Loompoint project graphic with interconnected threads" },
   },
 ];
 

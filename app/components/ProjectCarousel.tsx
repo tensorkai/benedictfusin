@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import ProjectPreview from "./ProjectPreview";
 import type { ProjectSlot } from "../content";
 import { projectRingPose, wrapProject } from "../lib/project-ring";
 
@@ -55,13 +56,22 @@ export default function ProjectCarousel({ projects }: { projects: ProjectSlot[] 
       if (!settle) idle = setTimeout(() => move.current(Math.round(target.current), true), 180);
     };
     function resize() {
-      const height = Math.max(0, ...cards.current.map((card) => card?.offsetHeight ?? 0));
+      const height = Math.max(0, ...cards.current.map((card) => {
+        const content = card?.querySelector<HTMLElement>(".project-card__content");
+        return content ? content.offsetHeight + 2 : 0;
+      }));
+      cards.current.forEach((card) => { if (card) card.style.height = `${height}px`; });
       element!.style.height = `${Math.max(440, height + 90)}px`;
       paint();
     }
     const observer = new ResizeObserver(resize);
     observer.observe(element);
-    cards.current.forEach((card) => { if (card) observer.observe(card); });
+    cards.current.forEach((card) => {
+      if (!card) return;
+      observer.observe(card);
+      const content = card.querySelector(".project-card__content");
+      if (content) observer.observe(content);
+    });
     const wheel = (event: WheelEvent) => {
       if (released.current || event.ctrlKey || event.metaKey || count < 2) return;
       const delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
@@ -128,12 +138,12 @@ export default function ProjectCarousel({ projects }: { projects: ProjectSlot[] 
               aria-label={enhanced && selected ? `${index + 1} of ${count}: ${project.title}` : undefined}
               aria-hidden={enhanced && opposite ? true : undefined}>
               <div className="project-card__content" aria-hidden={enhanced && !selected ? true : undefined} inert={enhanced && !selected}>
-                <div className="project-card__art" data-discipline={project.domain.split(" ")[0]} aria-hidden="true"><span /><span /><i />{project.domain.startsWith("Code") ? "</>" : project.domain.startsWith("Canvas") ? "◐" : "⌁"}</div>
+                <ProjectPreview project={project} />
                 <p className="project-card__domain">{project.domain}</p>
                 <h3>{project.title}</h3>
                 <p className="project-card__summary">{project.summary}</p>
-                <ul className="project-row__tags" aria-label={`${project.title} technologies`}>{project.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
-                <div className="project-card__footer"><span>{project.status}</span>{project.href && <a href={project.href} target="_blank" rel="noopener noreferrer">View project ↗</a>}</div>
+                <ul className="project-row__tags" aria-label={`${project.title} capabilities`}>{project.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
+                <div className="project-card__footer"><span>{project.status}</span>{project.href && <a href={project.href} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} live app (opens in a new tab)`}>Open live app ↗</a>}</div>
               </div>
               {enhanced && !selected && !opposite && <button type="button" className="project-card__select" tabIndex={-1} aria-label={`Select ${project.title}`} onClick={() => {
                 const forward = wrapProject(index - active, count);
