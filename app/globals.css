@@ -746,6 +746,10 @@ section[id], article[id] { scroll-margin-top: 110px; }
 .background-timeline__meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; margin-bottom: .7rem; color: var(--accent); font-size: .7rem; }
 .background-timeline h3 { margin: 0; font-size: clamp(1.05rem, 2vw, 1.25rem); font-weight: 550; line-height: 1.35; letter-spacing: -.02em; }
 .background-timeline__organization { margin: .4rem 0 0; font-size: .8rem; color: var(--text); line-height: 1.6; }
+.background-timeline__identity { display: flex; align-items: flex-start; gap: .85rem; }
+.background-timeline__identity > div { min-width: 0; }
+.background-timeline__logo { display: grid; place-items: center; flex: 0 0 56px; width: 56px; height: 56px; padding: 8px; border-radius: 12px; background: #fff; border: 1px solid #e6e6e6; }
+.background-timeline__logo img { display: block; width: 40px; height: 40px; object-fit: contain; }
 .background-timeline__detail { margin: .8rem 0 0; max-width: 65ch; font-size: .85rem; line-height: 1.7; color: var(--muted); }
 .background-timeline a { display: inline-flex; align-items: center; min-height: 44px; margin-top: .35rem; font-size: .8rem; color: var(--accent); text-underline-offset: 4px; }
 @media (max-width: 767px) { .background-section { padding-block: 36px; } .background-section__layout { grid-template-columns: 1fr; gap: 1.75rem; } }
