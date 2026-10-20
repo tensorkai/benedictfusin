@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
-<defs><radialGradient id="glow"><stop stop-color="#ff7a24" stop-opacity=".16"/><stop offset="1" stop-color="#ff7a24" stop-opacity="0"/></radialGradient></defs>
-<rect width="800" height="500" fill="#0b0b0b"/><circle cx="590" cy="210" r="280" fill="url(#glow)"/>
-<path d="M40 40h30M40 40v30m720-30h-30m30 0v30M40 460h30m-30 0v-30m720 30h-30m30 0v-30" stroke="#ffffff38" fill="none"/>
-<g fill="none" stroke="#ff7a24" stroke-width="2.5"><path d="M465 100q260 0 260 210M465 155q205 0 205 155M465 210q150 0 150 100M465 265q95 0 95 45M465 310q0-210 260-210M520 310q0-155 205-155M575 310q0-100 150-100M630 310q0-45 95-45"/><circle cx="596" cy="211" r="17" fill="#ff7a24"/></g>
-<text x="65" y="360" font-family="Arial,sans-serif" font-size="68" letter-spacing="-3" font-weight="700" fill="#fff">Loompoint</text>
-<text x="69" y="403" font-family="Arial,sans-serif" font-size="21" fill="#aaa">Ideas, connected.</text>
-</svg>

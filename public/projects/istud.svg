@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
-<defs><radialGradient id="glow"><stop stop-color="#ff7a24" stop-opacity=".16"/><stop offset="1" stop-color="#ff7a24" stop-opacity="0"/></radialGradient></defs>
-<rect width="800" height="500" fill="#0b0b0b"/><circle cx="590" cy="210" r="280" fill="url(#glow)"/>
-<path d="M40 40h30M40 40v30m720-30h-30m30 0v30M40 460h30m-30 0v-30m720 30h-30m30 0v-30" stroke="#ffffff38" fill="none"/>
-<g fill="none" stroke="#ff7a24" stroke-width="2.5"><ellipse cx="585" cy="195" rx="136" ry="102" transform="rotate(-25 585 195)"/><path d="M585 140q-50-35-100-12v150q50-23 100 12 50-35 100-12V128q-50-23-100 12Z" fill="#151515"/><path d="M585 140v150M507 166l51 13m-51 20 51 13m54-33 51-13m-51 46 51-13"/><circle cx="696" cy="116" r="10" fill="#ff7a24"/></g>
-<text x="65" y="360" font-family="Arial,sans-serif" font-size="68" letter-spacing="-3" font-weight="700" fill="#fff">iStud</text>
-<text x="69" y="403" font-family="Arial,sans-serif" font-size="21" fill="#aaa">Learning, in focus.</text>
-</svg>
