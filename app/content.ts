@@ -33,17 +33,22 @@ export interface ProjectSlot {
   preview?: { src: string; alt: string };
 }
 
-export interface AccomplishmentSlot {
-  year: string;
+export interface BackgroundEntry {
+  id: string;
   title: string;
-  org: string;
-  detail: string;
+  organization: string;
+  category: string;
+  period?: string;
+  detail?: string;
+  href?: string;
+  linkLabel?: string;
 }
 
 export const profile = {
   name: "Benedict Fusin",
   handle: "tensorkai",
   github: "https://github.com/tensorkai",
+  linkedin: "https://www.linkedin.com/in/benedictfusin1ece",
   motto: "Turning what if into it works.",
   intro:
     "I give ideas somewhere to live: a model, a microcontroller, a screen, sometimes a canvas.",
@@ -191,26 +196,34 @@ export const projectSlots: ProjectSlot[] = [
   },
 ];
 
-export const accomplishmentSlots: AccomplishmentSlot[] = [
+// Source: https://www.linkedin.com/in/benedictfusin1ece
+// Public LinkedIn hides the IECEP role/dates and another experience entry.
+// Keep those fields absent until supplied; do not infer employment titles.
+export const education: BackgroundEntry[] = [
   {
-    year: "Active",
-    title: "Google Developer Groups on Campus PUP",
-    org: "Polytechnic University of the Philippines — Sta. Mesa",
-    detail:
-      "Building alongside student developers and engineers across web, AI, and hardware initiatives.",
+    id: "pup-ece",
+    title: "Electronics Engineering",
+    organization: "Polytechnic University of the Philippines",
+    category: "Sta. Mesa, Manila",
+    period: "2024 - 2027",
+    detail: "Building a foundation in electronics engineering at PUP's Sta. Mesa campus in Manila.",
+  },
+];
+
+export const experience: BackgroundEntry[] = [
+  {
+    id: "iecep",
+    title: "Institute of Electronics Engineers of the Philippines (IECEP), Inc.",
+    organization: "Manila, Philippines",
+    category: "Experience",
+    href: profile.linkedin,
+    linkLabel: "View on LinkedIn",
   },
   {
-    year: "Ongoing",
-    title: "BS Electronics Engineering (ECE)",
-    org: "PUP Sta. Mesa · Manila & Hangzhou",
-    detail:
-      "Bridging electronics engineering fundamentals, embedded systems, and modern machine learning.",
-  },
-  {
-    year: "Next",
-    title: "Hackathons, Research & Milestones",
-    org: "Detailed timeline to be added",
-    detail:
-      "Awards, competition entries, and technical publications will be cataloged in this section.",
+    id: "gdg-pup",
+    title: "Official Member",
+    organization: "Google Developer Group on Campus PUP",
+    category: "Community involvement",
+    period: "November 2025 - Present",
   },
 ];
