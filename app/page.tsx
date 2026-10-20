@@ -1,3 +1,4 @@
+import BackgroundSection from "./components/BackgroundSection";
 import FloatingCertificate from "./components/FloatingCertificate";
 import TechLogo from "./components/TechLogo";
 import DisciplineConsole from "./components/DisciplineConsole";
@@ -6,7 +7,8 @@ import SiteShell from "./components/SiteShell";
 import FloatingHero from "./components/FloatingHero";
 import GitHubContributionScene from "./components/GitHubContributionScene";
 import {
-  accomplishmentSlots,
+  education,
+  experience,
   pillars,
   profile,
   projectSlots,
@@ -132,27 +134,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="milestones section" aria-labelledby="milestones-title">
-          <div className="container milestones__grid">
-            <div className="milestones__heading">
-              <p className="section-kicker">Field notes</p>
-              <h2 id="milestones-title">Where the work is happening now.</h2>
-              <FloatingCertificate placement="milestones" />
-            </div>
-            <ol className="milestone-list">
-              {accomplishmentSlots.map((item) => (
-                <li key={item.title}>
-                  <span>{item.year}</span>
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p className="milestone-list__org">{item.org}</p>
-                    <p>{item.detail}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
+        <BackgroundSection id="education" title="Education" intro="The foundation behind the work." entries={education} />
+        <BackgroundSection id="experience" title="Experience" intro="Professional experience and community involvement." entries={experience}>
+          <FloatingCertificate placement="milestones" />
+        </BackgroundSection>
 
 
       </main>

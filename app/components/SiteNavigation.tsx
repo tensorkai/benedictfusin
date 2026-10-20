@@ -9,6 +9,8 @@ const careerLinks = [
   { id: "workbench", label: "Disciplines" },
   { id: "selected-work", label: "Work" },
   { id: "practice", label: "Activity" },
+  { id: "education", label: "Education" },
+  { id: "experience", label: "Experience" },
 ];
 const personalLinks = [{ id: "journal", label: "Journal" }];
 
@@ -39,7 +41,7 @@ export default function SiteNavigation({ mode }: { mode: "career" | "personal" }
         menuButton.current?.focus();
       }
     }
-    const desktop = window.matchMedia("(min-width: 768px)");
+    const desktop = window.matchMedia("(min-width: 1100px)");
     const closeOnDesktop = () => { if (desktop.matches) setOpen(false); };
     window.addEventListener("keydown", closeOnEscape);
     desktop.addEventListener("change", closeOnDesktop);

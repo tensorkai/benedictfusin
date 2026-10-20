@@ -734,3 +734,28 @@ section[id], article[id] { scroll-margin-top: 110px; }
 @media (max-width: 767px) { .project-card__preview { height: 130px; } }
 
 .project-carousel.is-enhanced .project-ring { isolation: isolate; }
+/* Clear resume sections share the existing background and compact type scale. */
+.background-section { padding-block: 54px; }
+.background-section__layout { display: grid; grid-template-columns: .85fr 1.25fr; gap: clamp(2rem, 7vw, 6rem); }
+.background-section__heading h2 { margin: 0; font-size: clamp(1.75rem, 3.2vw, 2.5rem); font-weight: 550; line-height: 1.1; letter-spacing: -.045em; }
+.background-section__heading > p { max-width: 30ch; margin: .9rem 0 0; font-size: .85rem; line-height: 1.65; color: var(--muted); }
+.background-timeline { list-style: none; padding: 0; margin: 0; }
+.background-timeline > li { position: relative; padding: 0 0 2rem 1.75rem; border-left: 1px solid var(--line); }
+.background-timeline > li:last-child { padding-bottom: .25rem; }
+.background-timeline > li::before { content: ""; position: absolute; width: 9px; height: 9px; left: -5px; top: 5px; border: 1px solid var(--accent); border-radius: 50%; background: var(--background); box-shadow: 0 0 0 5px var(--background); }
+.background-timeline__meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; margin-bottom: .7rem; color: var(--accent); font-size: .7rem; }
+.background-timeline h3 { margin: 0; font-size: clamp(1.05rem, 2vw, 1.25rem); font-weight: 550; line-height: 1.35; letter-spacing: -.02em; }
+.background-timeline__organization { margin: .4rem 0 0; font-size: .8rem; color: var(--text); line-height: 1.6; }
+.background-timeline__detail { margin: .8rem 0 0; max-width: 65ch; font-size: .85rem; line-height: 1.7; color: var(--muted); }
+.background-timeline a { display: inline-flex; align-items: center; min-height: 44px; margin-top: .35rem; font-size: .8rem; color: var(--accent); text-underline-offset: 4px; }
+@media (max-width: 767px) { .background-section { padding-block: 36px; } .background-section__layout { grid-template-columns: 1fr; gap: 1.75rem; } }
+@media (min-width: 768px) and (max-width: 1099px) {
+  .brand__text { display: none; }
+  .topbar__inner { flex-wrap: wrap; padding-block: 10px; gap: .65rem; }
+  .mode-switch { margin-left: auto; }
+  .menu-toggle { display: grid; place-items: center; width: 40px; height: 40px; flex-shrink: 0; border: 1px solid var(--line); border-radius: 50%; background: transparent; color: var(--text); font-size: 1.1rem; cursor: pointer; }
+  .topbar__nav { display: none; order: 4; flex-basis: 100%; border-radius: 12px; padding: .5rem; }
+  .topbar__nav.is-open { display: flex; flex-wrap: wrap; }
+  .topbar__nav a { min-height: 44px; flex: 1 0 20%; justify-content: center; }
+  .topbar__nav .nav-github { border: 0; }
+}
