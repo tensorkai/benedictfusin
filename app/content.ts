@@ -197,8 +197,6 @@ export const projectSlots: ProjectSlot[] = [
 ];
 
 // Source: https://www.linkedin.com/in/benedictfusin1ece
-// Public LinkedIn hides the IECEP role/dates and another experience entry.
-// Keep those fields absent until supplied; do not infer employment titles.
 export const education: BackgroundEntry[] = [
   {
     id: "pup-ece",
@@ -212,18 +210,35 @@ export const education: BackgroundEntry[] = [
 
 export const experience: BackgroundEntry[] = [
   {
-    id: "iecep",
-    title: "Institute of Electronics Engineers of the Philippines (IECEP), Inc.",
-    organization: "Manila, Philippines",
-    category: "Experience",
-    href: profile.linkedin,
-    linkLabel: "View on LinkedIn",
+    id: "gdg-pup",
+    title: "IoT Co-Lead",
+    organization: "Google Developer Groups on Campus PUP",
+    category: "Leadership",
+    period: "Oct 2026–Present",
+    detail: "Lead the Internet of Things track, planning workshops and hands-on builds for members. I mentor cadets on sensors, microcontrollers, and connecting devices to AI and cloud services, and I coordinate with the core team on events and technical direction.",
   },
   {
-    id: "gdg-pup",
-    title: "Official Member",
-    organization: "Google Developer Group on Campus PUP",
+    id: "cisco-netconnect",
+    title: "Developer Network Cadet",
+    organization: "Cisco NetConnect PUP, Manila",
+    category: "Training",
+    period: "Sep 2026–Present",
+    detail: "Training in networking, developer tooling, and network automation through Cisco's student program. I take part in workshops and community projects that connect networking fundamentals with software development.",
+  },
+  {
+    id: "iecep",
+    title: "Manila Student Chapter Associate",
+    organization: "IECEP",
     category: "Community involvement",
-    period: "November 2025 - Present",
+    period: "Jan 2026–Present",
+    detail: "Support the Manila student chapter's programs, events, and member engagement for electronics engineering students. I help organize technical seminars and networking activities across the chapter.",
+  },
+  {
+    id: "datacamp",
+    title: "AI Engineering for Data Science and Developer Scholar",
+    organization: "DataCamp",
+    category: "Scholarship",
+    period: "Dec 2025–Present",
+    detail: "Studying machine learning and AI engineering. I work through hands-on coursework in Python, data analysis, and model building, and apply it to my own projects.",
   },
 ];
