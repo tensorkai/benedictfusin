@@ -6,7 +6,6 @@ import { profile } from "../content";
 
 const careerLinks = [
   { id: "toolkit", label: "Toolkit" },
-  { id: "workbench", label: "Disciplines" },
   { id: "selected-work", label: "Work" },
   { id: "practice", label: "Activity" },
   { id: "education", label: "Education" },

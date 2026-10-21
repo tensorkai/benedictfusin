@@ -95,7 +95,8 @@ section[id], article[id] { scroll-margin-top: 110px; }
 }
 .status-light { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
 
-.hero__name span + span { margin-left: .08em; }
+.hero__name-word { display: inline-block; white-space: nowrap; }
+.hero__name-space { display: inline-block; width: .24em; }
 
 .geometry__disc { fill: var(--accent); }
 .geometry__ring { stroke: var(--accent); stroke-width: .8; opacity: .5; }
@@ -446,7 +447,10 @@ section[id], article[id] { scroll-margin-top: 110px; }
 /* The photo and all its orbital details scale from the same container. */
 .hero__identity { position: relative; width: min(100%, 900px); margin-inline: auto; height: auto; aspect-ratio: 900 / 400; isolation: isolate; container-type: inline-size; }
 .hero__name { position: relative; z-index: 2; margin: 0; text-align: center; font-size: clamp(2.5rem, 6.5vw, 5rem); font-weight: 600; line-height: 1.1; letter-spacing: -.06em; }
-.hero__geometry { position: absolute; z-index: -1; width: 68%; height: auto; max-width: none; top: 8%; left: 50%; transform: translateX(-50%); pointer-events: none; filter: drop-shadow(0 0 22px #ff7a2410); }
+.hero__geometry { position: absolute; z-index: -1; width: 100vw; height: 100%; max-width: none; top: 0; left: 50%; transform: translateX(-50%); pointer-events: none; filter: drop-shadow(0 0 22px #ff7a2410); }
+.geometry__field { stroke: var(--accent); stroke-width: .6; opacity: .18; }
+.geometry__edge-marks { stroke: var(--accent); stroke-width: 1.2; opacity: .65; }
+.geometry__orbit--wide { opacity: .32; }
 .portrait-core { position: absolute; width: 26%; left: 50%; top: 27%; transform: translateX(-50%); }
 .portrait-core__image { display: block; width: 100%; height: auto; aspect-ratio: 378 / 370; object-fit: contain; border-radius: 145px 145px 11px 11px; filter: grayscale(1); }
 .portrait-core__lift { box-shadow: 0 0 55px #ff7a2414; }
@@ -529,7 +533,7 @@ section[id], article[id] { scroll-margin-top: 110px; }
   .topbar__nav .nav-github { border: 0; }
   .hero__identity { max-width: 520px; aspect-ratio: 520 / 360; }
   .hero__name { font-size: clamp(2rem, 8vw, 2.5rem); }
-  .hero__geometry { width: 100%; top: 13%; }
+  .hero__geometry { opacity: .85; }
   .portrait-core { width: 40%; top: 27%; }
   .hero__side-note { display: none; }
   .hero__motto { font-size: 1.5rem; }
@@ -547,12 +551,11 @@ section[id], article[id] { scroll-margin-top: 110px; }
 }
 @media (max-width: 400px) {
   .hero__identity { aspect-ratio: 320 / 260; }
-  .hero__geometry { width: 115%; top: 14%; }
   .portrait-core { width: 45%; top: 27%; }
   .portrait-core__lift { padding: 5px; }
 }
 
-/* The wordmark keeps its compact scale; light and depth provide the emphasis. */
+/* Each letter resolves into a reflective wordmark in one entrance sequence. */
 .hero { --pointer-x: 0; --pointer-y: 0; --light-x: 50%; --light-y: 50%; }
 .hero__name { perspective: 900px; padding-bottom: .1em; }
 .hero__name-metal {
@@ -563,20 +566,22 @@ section[id], article[id] { scroll-margin-top: 110px; }
   transform: rotateY(calc(var(--pointer-x) * 3deg));
 }
 @supports (background-clip: text) {
-  .hero__name-metal {
+  .hero__letter {
     color: transparent;
-    background-image: radial-gradient(ellipse at var(--light-x) var(--light-y), #fff 0%, transparent 65%),
+    background-image: linear-gradient(110deg, transparent 25%, #fff 48%, #ffd4ac 50%, transparent 72%),
       linear-gradient(175deg, #fff 8%, #eee 30%, #9c9c9c 48%, #fff 50%, #eee 66%, #ffb57d 100%);
+    background-size: 300% 100%, 100% 100%;
+    background-position: 150% 0, 0 0;
     background-clip: text;
   }
 }
-.hero__name-metal::after {
-  content: attr(data-text); position: absolute; inset: 0;
-  color: transparent; pointer-events: none;
-  background: linear-gradient(110deg, transparent 35%, #fff 50%, transparent 65%) 150% 0 / 250% 100%;
-  background-clip: text; animation: name-light-reveal 1500ms ease-out 1 both;
+.hero__letter {
+  display: inline-block; transform-origin: 50% 100%;
+  animation: name-letter-reveal 900ms cubic-bezier(.16, 1, .3, 1) both, name-letter-light 1100ms ease-in-out both;
+  animation-delay: calc(100ms + var(--letter-index) * 55ms), calc(1200ms + var(--letter-index) * 45ms);
 }
-@keyframes name-light-reveal { from { background-position: 150% 0; opacity: 0; } 30% { opacity: .9; } to { background-position: -100% 0; opacity: 0; } }
+@keyframes name-letter-reveal { from { opacity: 0; transform: perspective(500px) translateY(.55em) rotateX(-75deg); filter: blur(6px); } to { opacity: 1; transform: perspective(500px) translateY(0) rotateX(0); filter: blur(0); } }
+@keyframes name-letter-light { from { background-position: 150% 0, 0 0; } to { background-position: -100% 0, 0 0; } }
 .portrait-core { perspective: 900px; }
 .portrait-core__lift {
   position: relative; overflow: hidden; transform-style: preserve-3d;
@@ -589,7 +594,7 @@ section[id], article[id] { scroll-margin-top: 110px; }
 }
 .hero__geometry { transform: translateX(calc(-50% + var(--pointer-x) * -14px)) translateY(calc(var(--pointer-y) * -8px)); }
 .hero[data-motion="paused"] .geometry__satellites,
-.hero[data-motion="paused"] .hero__name-metal::after { animation-play-state: paused; }
+.hero[data-motion="paused"] .hero__letter { animation-play-state: paused; }
 .workbench .discipline-console { margin-top: 0; margin-bottom: 2.5rem; }
 .toolkit { padding-top: 60px; }
 .toolkit__heading { margin-bottom: 2rem; }
@@ -673,7 +678,7 @@ section[id], article[id] { scroll-margin-top: 110px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero__name-metal, .portrait-core__lift { transform: none; }
-  .hero__name-metal::after { display: none; }
+  .hero__letter { animation: none; transform: none; filter: none; opacity: 1; }
   .hero__geometry { transform: translateX(-50%); }
   .cosmic-atmosphere * { animation: none !important; transform: none; }
   .project-carousel.is-enhanced .project-card:not(.is-selected) { visibility: hidden; }
@@ -689,7 +694,7 @@ section[id], article[id] { scroll-margin-top: 110px; }
   }
 }
 /* Orbit fragments frame the portrait without covering its foreground. */
-.hero__triangles { position: absolute; z-index: -2; width: 85%; height: 110%; left: 50%; top: -4%; transform: translateX(-50%); overflow: visible; pointer-events: none; }
+.hero__triangles { position: absolute; z-index: -2; width: 100vw; height: 100%; left: 50%; top: 0; transform: translateX(-50%); overflow: hidden; pointer-events: none; }
 .hero__triangle-fill { fill: #ff7a241c; stroke: #ff7a2450; stroke-width: 1; transform: translate(calc(var(--pointer-x, 0) * -20px), calc(var(--pointer-y, 0) * -12px)); }
 .hero__triangle-outline { fill: #ff7a2403; stroke: #ff7a2490; stroke-width: 1.5; transform: translate(calc(var(--pointer-x, 0) * 13px), calc(var(--pointer-y, 0) * 9px)); }
 .tech-logo { display: inline-grid; place-items: center; flex: 0 0 30px; width: 30px; height: 30px; border-radius: 6px; background: #f4f4f4; color: #161616; font-size: .65rem; font-weight: 700; }
@@ -718,7 +723,7 @@ section[id], article[id] { scroll-margin-top: 110px; }
 .certificate-dialog p { color: var(--muted); font-size: .85rem; margin-bottom: 0; }
 @keyframes certificate-drift { from { transform: translateY(0) rotate(-6deg); } to { transform: translateY(-9px) rotate(-3deg); } }
 @media (max-width: 900px) { .toolkit__body { grid-template-columns: minmax(0, 1fr); gap: 0; } .certificate-slot--toolkit { justify-content: flex-end; } }
-@media (max-width: 767px) { .hero__triangles { width: 105%; } .certificate-float { width: 180px; } }
+@media (max-width: 767px) { .certificate-float { width: 180px; } }
 @media (prefers-reduced-motion: reduce) { .hero__triangle-fill, .hero__triangle-outline { transform: none; } .certificate-float { animation: none; } }
 
 
