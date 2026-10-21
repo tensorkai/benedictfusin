@@ -1,7 +1,7 @@
 import BackgroundSection from "./components/BackgroundSection";
 import FloatingCertificate from "./components/FloatingCertificate";
 import TechLogo from "./components/TechLogo";
-import DisciplineConsole from "./components/DisciplineConsole";
+
 import ProjectCarousel from "./components/ProjectCarousel";
 import SiteShell from "./components/SiteShell";
 import FloatingHero from "./components/FloatingHero";
@@ -9,18 +9,10 @@ import GitHubContributionScene from "./components/GitHubContributionScene";
 import {
   education,
   experience,
-  pillars,
   profile,
   projectSlots,
   stack,
-  type PillarKey,
 } from "./content";
-
-const disciplineMarks: Record<PillarKey, string> = {
-  code: "{ }",
-  circuits: "⌁",
-  canvas: "◐",
-};
 
 export default function Home() {
   return (
@@ -56,46 +48,6 @@ export default function Home() {
                 </div>
               ))}
             </div><FloatingCertificate placement="toolkit" /></div>
-          </div>
-        </section>
-
-        <section id="workbench" className="workbench section">
-          <div className="container">
-            <div className="section-heading section-heading--wide">
-              <div>
-                <p className="section-kicker">Three ways of thinking</p>
-                <h2>I make ideas cross boundaries.</h2>
-              </div>
-              <p>
-                A screen can control a machine. A circuit can produce a story. A model can
-                become something people touch. The interesting work happens between fields.
-              </p>
-            </div>
-
-            <DisciplineConsole />
-            <div className="discipline-list">
-              {pillars.map((pillar) => (
-                <article key={pillar.key} id={pillar.key} className={`discipline discipline--${pillar.key}`}>
-                  <div className="discipline__visual" aria-hidden="true">
-                    <span className="discipline__mark">{disciplineMarks[pillar.key]}</span>
-                    <span className="discipline__wave" />
-                    <span className="discipline__node discipline__node--a" />
-                    <span className="discipline__node discipline__node--b" />
-                  </div>
-                  <div className="discipline__intro">
-                    <p>{pillar.domain}</p>
-                    <h3>{pillar.label}</h3>
-                    <strong>{pillar.title}</strong>
-                  </div>
-                  <div className="discipline__content">
-                    <p>{pillar.body}</p>
-                    <ul aria-label={`${pillar.label} work`}>
-                      {pillar.deliverables.map((item) => <li key={item}>{item}</li>)}
-                    </ul>
-                  </div>
-                </article>
-              ))}
-            </div>
           </div>
         </section>
 
