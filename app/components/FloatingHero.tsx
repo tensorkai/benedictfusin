@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, type CSSProperties } from "react";
 import { useHeroMotion } from "./useHeroMotion";
 import { profile } from "../content";
 
@@ -17,13 +17,23 @@ export default function FloatingHero() {
 
       <div className="hero__identity">
         <h1 id="hero-heading" className="hero__name" aria-label="Benedict Fusin">
-          <span className="hero__name-metal" data-text="Benedict Fusin">Benedict Fusin</span>
+          <span className="hero__name-metal" aria-hidden="true">
+            {profile.name.split(" ").map((word, wordIndex) => <span className="hero__name-word" key={word}>
+              {Array.from(word).map((letter, index) => <span className="hero__letter" key={index} style={{ "--letter-index": index + (wordIndex === 0 ? 0 : 8) } as CSSProperties}>{letter}</span>)}
+              {wordIndex === 0 && <span className="hero__name-space"> </span>}
+            </span>)}
+          </span>
         </h1>
-        <svg className="hero__triangles" viewBox="0 0 900 500" aria-hidden="true">
-          <path className="hero__triangle-fill" d="M100 112 660 190 308 475Z" />
-          <path className="hero__triangle-outline" d="M598 30 804 434 278 355Z" />
+        <svg className="hero__triangles" viewBox="0 0 1440 500" preserveAspectRatio="none" aria-hidden="true">
+          <path className="hero__triangle-fill" d="M-40 90 1070 175 380 490Z" />
+          <path className="hero__triangle-outline" d="M1050 10 1480 450 220 350Z" />
         </svg>
-        <svg className="hero__geometry" viewBox="0 0 800 500" fill="none" aria-hidden="true">
+        <svg className="hero__geometry" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+          <path className="geometry__field" d="M0 255h1440M0 82 1440 420M0 440 1440 65" />
+          <ellipse className="geometry__orbit geometry__orbit--wide" cx="720" cy="260" rx="740" ry="175" transform="rotate(-8 720 260)" />
+          <ellipse className="geometry__orbit geometry__orbit--quiet" cx="720" cy="260" rx="650" ry="210" transform="rotate(9 720 260)" />
+          <g className="geometry__edge-marks"><path d="M70 100h24m-12-12v24M1340 365h24m-12-12v24M180 415l20-35 20 35ZM1240 70l20 14-20 14-20-14Z" /><circle cx="120" cy="270" r="7" /><circle cx="1320" cy="170" r="5" /></g>
+          <g transform="translate(320 0)">
           <g className="geometry__satellites"><circle cx="400" cy="255" r="214" /><circle cx="400" cy="41" r="5" /><path d="M186 255h-18m9-9v18M605 330l8-10 8 10-8 10Z" /></g>
           <circle className="geometry__disc" cx="440" cy="255" r="164" />
           <circle className="geometry__ring" cx="440" cy="255" r="184" />
@@ -37,6 +47,7 @@ export default function FloatingHero() {
           <circle className="geometry__dot" cx="161" cy="385" r="9" />
           <circle className="geometry__dot" cx="654" cy="221" r="5" />
           <path className="geometry__triangle" d="m558 70 28 8-21 20-7-28Z" />
+          </g>
         </svg>
         <div className="portrait-core">
           <div className="portrait-core__lift">
