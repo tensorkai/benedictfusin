@@ -35,6 +35,7 @@ export interface ProjectSlot {
 
 export interface BackgroundEntry {
   id: string;
+  previousRoles?: { title: string; period: string; detail: string }[];
   logo?: string;
   title: string;
   organization: string;
@@ -214,6 +215,13 @@ export const experience: BackgroundEntry[] = [
     id: "gdg-pup",
     logo: "/organizations/gdg.webp",
     title: "IoT Co-Lead",
+    previousRoles: [
+      {
+        title: "IoT Cadet",
+        period: "Nov 2025–Oct 2026",
+        detail: "Built hands-on IoT and machine learning projects, from sensor data collection to embedded prototypes. Joined community events and workshops, and earned a promotion to Co-Lead.",
+      },
+    ],
     organization: "Google Developer Groups on Campus PUP",
     category: "Leadership",
     period: "Oct 2026–Present",
