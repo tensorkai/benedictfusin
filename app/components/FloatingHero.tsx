@@ -7,7 +7,6 @@ import { profile } from "../content";
 
 export default function FloatingHero() {
   const hero = useRef<HTMLDivElement>(null);
-  const [painted, setPainted] = useState(true);
   const [motionPaused, setMotionPaused] = useState(false);
   useHeroMotion(hero, motionPaused);
   return (
@@ -51,7 +50,7 @@ export default function FloatingHero() {
           <path className="geometry__triangle" d="m558 70 28 8-21 20-7-28Z" />
           </g>
         </svg>
-        <div className="portrait-core" data-painted={painted}>
+        <div className="portrait-core">
           <svg className="portrait-core__shards" viewBox="0 0 600 600" fill="none" aria-hidden="true">
             <g className="portrait-shards__outer">
               <path d="M65 120 250 65 106 283Z" fill="#526974" />
@@ -66,26 +65,15 @@ export default function FloatingHero() {
             </g>
           </svg>
           <div className="portrait-core__lift">
-            <span className="portrait-core__reflection" aria-hidden="true" />
             <Image
-              src="/benedict-cutout.png"
-              alt={painted ? "" : "Portrait of Benedict Fusin"}
-              width={378}
-              height={370}
-              unoptimized
-              loading="eager"
-              fetchPriority="high"
-              className="portrait-core__image portrait-core__image--original"
-            />
-            <Image
-              src="/benedict-painted.webp"
-              alt={painted ? "Benedict Fusin with geometric paint across his face and clothing, blending into an angular mural" : ""}
+              src="/benedict-painted-cutout.webp"
+              alt="Portrait of Benedict Fusin with geometric paint across his face and clothing"
               width={960}
               height={960}
               unoptimized
               loading="eager"
               fetchPriority="high"
-              className="portrait-core__image portrait-core__image--painted"
+              className="portrait-core__image"
             />
           </div>
         </div>
@@ -95,10 +83,6 @@ export default function FloatingHero() {
       </div>
 
       <div className="hero__art-controls">
-        <div className="portrait-switch" role="group" aria-label="Portrait style">
-          <button type="button" aria-pressed={painted} onClick={() => setPainted(true)}>Painted</button>
-          <button type="button" aria-pressed={!painted} onClick={() => setPainted(false)}>Original</button>
-        </div>
         <button className="hero__motion-toggle" type="button" aria-pressed={motionPaused} onClick={() => setMotionPaused(!motionPaused)}>
           <span aria-hidden="true">{motionPaused ? "▷" : "Ⅱ"}</span> Pause motion
         </button>
