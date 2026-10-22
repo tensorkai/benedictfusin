@@ -1,13 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, type CSSProperties } from "react";
+import { useRef, useState, type CSSProperties } from "react";
 import { useHeroMotion } from "./useHeroMotion";
 import { profile } from "../content";
 
 export default function FloatingHero() {
   const hero = useRef<HTMLDivElement>(null);
-  useHeroMotion(hero);
+  const [painted, setPainted] = useState(true);
+  const [motionPaused, setMotionPaused] = useState(false);
+  useHeroMotion(hero, motionPaused);
   return (
     <div className="hero" ref={hero}>
       <div className="hero__status" aria-label="Current status">
@@ -49,24 +51,57 @@ export default function FloatingHero() {
           <path className="geometry__triangle" d="m558 70 28 8-21 20-7-28Z" />
           </g>
         </svg>
-        <div className="portrait-core">
+        <div className="portrait-core" data-painted={painted}>
+          <svg className="portrait-core__shards" viewBox="0 0 600 600" fill="none" aria-hidden="true">
+            <g className="portrait-shards__outer">
+              <path d="M65 120 250 65 106 283Z" fill="#526974" />
+              <path d="m390 56 147 98-103 97Z" fill="#ff7a24" />
+              <path d="m453 336 118 126-199 79Z" fill="#bb8b40" />
+              <path d="m47 380 136 56-46 110Z" fill="#e9dfc8" />
+            </g>
+            <g className="portrait-shards__inner" stroke="#e9dfc8" strokeWidth="2">
+              <path d="m18 232 164-129 52 231Z" />
+              <path d="m356 112 224 222-163 158Z" />
+              <path d="m86 482 207-117 48 204Z" stroke="#ff7a24" />
+            </g>
+          </svg>
           <div className="portrait-core__lift">
             <span className="portrait-core__reflection" aria-hidden="true" />
             <Image
               src="/benedict-cutout.png"
-              alt="Portrait of Benedict Fusin"
+              alt={painted ? "" : "Portrait of Benedict Fusin"}
               width={378}
               height={370}
               unoptimized
               loading="eager"
               fetchPriority="high"
-              className="portrait-core__image"
+              className="portrait-core__image portrait-core__image--original"
+            />
+            <Image
+              src="/benedict-painted.webp"
+              alt={painted ? "Benedict Fusin with geometric paint across his face and clothing, blending into an angular mural" : ""}
+              width={960}
+              height={960}
+              unoptimized
+              loading="eager"
+              fetchPriority="high"
+              className="portrait-core__image portrait-core__image--painted"
             />
           </div>
         </div>
 
         <p className="hero__side-note hero__side-note--left">An engineer&apos;s mind.<br />An artist&apos;s eye.</p>
         <p className="hero__side-note hero__side-note--right">Code. Circuits. Canvas.<br />Always connecting the dots.</p>
+      </div>
+
+      <div className="hero__art-controls">
+        <div className="portrait-switch" role="group" aria-label="Portrait style">
+          <button type="button" aria-pressed={painted} onClick={() => setPainted(true)}>Painted</button>
+          <button type="button" aria-pressed={!painted} onClick={() => setPainted(false)}>Original</button>
+        </div>
+        <button className="hero__motion-toggle" type="button" aria-pressed={motionPaused} onClick={() => setMotionPaused(!motionPaused)}>
+          <span aria-hidden="true">{motionPaused ? "▷" : "Ⅱ"}</span> Pause motion
+        </button>
       </div>
 
       <div className="hero__intro">
