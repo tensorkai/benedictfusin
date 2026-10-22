@@ -2,7 +2,7 @@
 
 import { useEffect, type RefObject } from "react";
 
-export function useHeroMotion(ref: RefObject<HTMLDivElement | null>) {
+export function useHeroMotion(ref: RefObject<HTMLDivElement | null>, paused = false) {
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
@@ -35,16 +35,16 @@ export function useHeroMotion(ref: RefObject<HTMLDivElement | null>) {
       }
     }
     function start() { if (!frame) frame = requestAnimationFrame(tick); }
-    function reset() { targetX = 0; targetY = 0; start(); }
+    function reset() { if (paused || reduced.matches) return; targetX = 0; targetY = 0; start(); }
     function move(event: PointerEvent) {
-      if (reduced.matches || !finePointer.matches || !visible || document.hidden || event.pointerType === "touch") return;
+      if (paused || reduced.matches || !finePointer.matches || !visible || document.hidden || event.pointerType === "touch") return;
       const rect = element!.querySelector(".hero__identity")!.getBoundingClientRect();
       targetX = Math.max(-1, Math.min(1, (event.clientX - rect.left) / rect.width * 2 - 1));
       targetY = Math.max(-1, Math.min(1, (event.clientY - rect.top) / rect.height * 2 - 1));
       start();
     }
     function updateMotion() {
-      const running = visible && !document.hidden && !reduced.matches;
+      const running = visible && !document.hidden && !reduced.matches && !paused;
       element!.dataset.motion = running ? "running" : "paused";
       if (!running || !finePointer.matches) {
         cancelAnimationFrame(frame); frame = 0;
@@ -70,5 +70,5 @@ export function useHeroMotion(ref: RefObject<HTMLDivElement | null>) {
       shell?.style.removeProperty("--space-x");
       shell?.style.removeProperty("--space-y");
     };
-  }, [ref]);
+  }, [ref, paused]);
 }
