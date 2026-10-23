@@ -683,9 +683,9 @@ section[id], article[id] { scroll-margin-top: 110px; }
   .cosmic-nebula { width: 160vw; opacity: .55; }
   .cosmic-nebula--one { left: -30%; }
   .cosmic-atmosphere__kali-mark {
-    width: 142svh;
-    max-width: none;
+    width: min(92vw, 76svh);
     opacity: .035;
+    transform: translate(-50%, -50%);
   }
   .cosmic-atmosphere__constellations { opacity: .2; }
   .toolkit { padding-top: 40px; }
