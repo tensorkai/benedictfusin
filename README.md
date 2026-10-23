@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Benedict Fusin — Portfolio
 
-## Getting Started
+[![Quick Facts](https://img.shields.io/badge/Quick%20Facts-Electronics%20Engineer%20%7C%20Builder-0f172a?style=for-the-badge)](https://github.com/tensorkai)
+[![Full-Stack Developer](https://img.shields.io/badge/Role-Full--Stack%20Developer-2563eb?style=flat-square)](https://github.com/tensorkai)
+[![Cybersecurity](https://img.shields.io/badge/Focus-Cybersecurity-16a34a?style=flat-square)](https://github.com/tensorkai)
+[![Next.js](https://img.shields.io/badge/Next.js-16.4.2-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.3.0-61dafb?logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-First, run the development server:
+A personal portfolio for [Benedict Fusin](https://github.com/tensorkai): an Electronics Engineering student building AI-powered web products, embedded and IoT systems, and visual experiments.
+
+## Quick facts
+
+- Based in Manila, Philippines; studying BS Electronics Engineering at PUP Sta. Mesa.
+- Works across full-stack web development, AI/ML, embedded firmware, robotics, and IoT.
+- Builds with Next.js, React, TypeScript, Python, FastAPI, PostgreSQL, PyTorch, and more.
+- Leads the IoT track at Google Developer Groups on Campus PUP.
+
+## Featured work
+
+| Project | Focus |
+| --- | --- |
+| [Beacon](https://beacon-mu-drab.vercel.app) | Household preparedness plans, go-bag checklists, and evacuation information. |
+| [Pylon](https://pylon-llm.vercel.app) | An academic AI workspace for research, writing, and campus guidance. |
+| [iStud](https://i-stud.vercel.app) | A focused learning and study workspace. |
+| [Chipr](https://chipr-smoky.vercel.app) | Personal and business finance tracking. |
+| [Loompoint](https://fusin-barangay-ai.vercel.app) | An AI chat workspace for local models and cloud endpoints. |
+
+## Run locally
+
+Requirements: Node.js 20.9 or later and npm.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available commands
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the local development server. |
+| `npm run build` | Create a production build. |
+| `npm run start` | Run the production server after building. |
+| `npm run lint` | Run ESLint. |
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```text
+app/        Application routes, UI components, and portfolio content
+public/     Images, project previews, organization marks, and tech logos
+tests/      Unit tests for portfolio data helpers
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Connect
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- GitHub: [@tensorkai](https://github.com/tensorkai)
+- LinkedIn: [Benedict Fusin](https://www.linkedin.com/in/benedictfusin1ece)
