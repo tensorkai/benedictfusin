@@ -607,6 +607,19 @@ section[id], article[id] { scroll-margin-top: 110px; }
   filter: blur(35px); transform: rotate(-24deg);
 }
 .cosmic-nebula--two { bottom: -25%; left: -25%; background: radial-gradient(ellipse at 40% 50%, #ff7a2428, transparent 55%), radial-gradient(ellipse at 70% 70%, #b344131c, transparent 60%); filter: blur(30px); animation-delay: -28s; }
+.cosmic-atmosphere__kali-mark {
+  display: none;
+  position: absolute;
+  top: 18%;
+  right: -10%;
+  width: min(58vw, 760px);
+  height: auto;
+  fill: currentColor;
+  color: #5d7891;
+  opacity: .045;
+  transform: rotate(-11deg);
+}
+.theme-career .cosmic-atmosphere__kali-mark { display: block; }
 .cosmic-atmosphere__stars { inset: -45px; opacity: .5; mask-image: linear-gradient(90deg, #000, #0006 35% 65%, #000); }
 .cosmic-stars--far { background-size: 157px 181px, 239px 263px, 307px 331px; opacity: .24; animation: stars-far 90s linear infinite alternate; }
 .cosmic-stars--middle { background-size: 293px 337px, 431px 397px, 509px 463px; background-position: 60px 90px, 12px 56px, 180px 36px; animation: stars-middle 65s ease-in-out infinite alternate; }
@@ -667,6 +680,7 @@ section[id], article[id] { scroll-margin-top: 110px; }
   .project-card__art { height: 48px; margin-bottom: .8rem; }
   .cosmic-nebula { width: 160vw; opacity: .55; }
   .cosmic-nebula--one { left: -30%; }
+  .cosmic-atmosphere__kali-mark { top: 22%; right: -30%; width: 88vw; opacity: .03; }
   .cosmic-atmosphere__constellations { opacity: .2; }
   .toolkit { padding-top: 40px; }
 }
